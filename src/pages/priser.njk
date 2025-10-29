@@ -1,0 +1,141 @@
+---
+layout: base.njk
+title: Priser - Harmonic Egg Energiterapi
+description: Se våre priser for Harmonic Egg sesjoner. Førstegangsbesøk til halv pris - kr 799. Enkeltsesjoner, klippekort og medlemskap tilgjengelig.
+permalink: /priser/
+---
+
+<section class="hero" style="padding: 3rem 0;">
+    <div class="container">
+        <h1>Våre Priser</h1>
+        <p>Finn pakken som passer for deg</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Velg din pakke</h2>
+            <p>Alle priser inkluderer merverdiavgift</p>
+        </div>
+        
+        <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
+            {% for price in site.prices %}
+            <div class="price-card {% if price.featured %}featured{% endif %}">
+                {% if price.featured %}
+                <div style="background: var(--color-primary); color: white; padding: 0.5rem; margin: -2rem -2rem 1rem; border-radius: 8px 8px 0 0;">
+                    <strong>⭐ BESTE TILBUD FOR NYE KUNDER</strong>
+                </div>
+                {% endif %}
+                
+                <h3>{{ price.name }}</h3>
+                <div class="price-amount">
+                    kr {{ price.price }},-
+                    {% if price.originalPrice %}
+                    <span style="font-size: 1rem; text-decoration: line-through; color: #999; display: block;">
+                        kr {{ price.originalPrice }},-
+                    </span>
+                    {% endif %}
+                </div>
+                <p style="color: #666; margin-bottom: 1.5rem;">{{ price.description }}</p>
+                
+                <ul class="price-features">
+                    {% for feature in price.features %}
+                    <li>{{ feature }}</li>
+                    {% endfor %}
+                </ul>
+                
+                <a href="/booking" class="btn-primary" style="margin-top: 1.5rem; width: 100%; display: block; text-align: center;">
+                    Book nå
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Additional Services -->
+<section class="section" style="background-color: white;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Tilleggstjenester</h2>
+        </div>
+        
+        <div class="grid grid-2">
+            <div class="card">
+                <h3>🧘‍♀️ Harmonic Yoga Drop-In</h3>
+                <p class="price-amount" style="font-size: 2rem;">kr 290,-</p>
+                <p>Kombiner yoga med Harmonic Egg opplevelsen.</p>
+                <p style="margin-top: 1rem;"><strong>Kampanje:</strong> «Ta med en venn» - kr 500,- for begge</p>
+                <p style="font-size: 0.9rem; color: #666;">(Send SMS til 402 22 828 senest én time før)</p>
+            </div>
+            
+            <div class="card">
+                <h3>🎵 Eggets musikk på minnepinne</h3>
+                <p>Ta med deg healingmusikken hjem:</p>
+                <ul style="list-style: none; padding: 0; margin-top: 1rem;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--color-border);">
+                        <strong>Wellness tracks:</strong> kr 1.223,-
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--color-border);">
+                        <strong>Purity:</strong> kr 943,-
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--color-border);">
+                        <strong>Frequency of love:</strong> kr 454,-
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--color-border);">
+                        <strong>Soul concerto:</strong> kr 664,-
+                    </li>
+                    <li style="padding: 0.5rem 0;">
+                        <strong>Mantras:</strong> kr 664,-
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Ofte stilte spørsmål om priser</h2>
+        </div>
+        
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <h3>Kan jeg kjøpe gavekort?</h3>
+                <p>Ja! Alle våre pakker kan også kjøpes som gavekort. Perfekt som gave til noen du bryr deg om.</p>
+            </div>
+            
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <h3>Hvor lang tid tar en sesjon?</h3>
+                <p>En standard sesjon varer i 60 minutter, pluss tid til konsultasjon før og etter.</p>
+            </div>
+            
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <h3>Har dere bedriftsavtaler?</h3>
+                <p>Ja, vi tilbyr skreddersydde bedriftsavtaler. Ta kontakt med oss for mer informasjon.</p>
+            </div>
+            
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <h3>Hva er avbestillingsreglene?</h3>
+                <p>Vi ber om minst 24 timers varsel ved avbestilling. Ved senere avbestilling kan sesjon bli belastet.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section" style="background-color: var(--color-dark); color: white; text-align: center;">
+    <div class="container">
+        <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">Klar til å starte din reise?</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">
+            Book din første sesjon i dag og opplev forskjellen
+        </p>
+        <a href="/booking" class="btn-primary" style="font-size: 1.1rem; padding: 0.8rem 2rem;">Book din sesjon</a>
+        <p style="margin-top: 1.5rem; opacity: 0.8;">
+            Spørsmål? Ring oss på <a href="tel:+4740222828" style="color: white; text-decoration: underline;">+47 402 22 828</a>
+        </p>
+    </div>
+</section>

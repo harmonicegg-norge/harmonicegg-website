@@ -1,0 +1,127 @@
+---
+layout: base.njk
+title: Harmonic Egg Energiterapi - Skandinavias eneste Harmonic Egg
+description: Opplev Skandinavias eneste Harmonic Egg i Sandnes. Energiterapi gjennom lyd, lys og hellig geometri for mental, emosjonell og fysisk velvære.
+---
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Velkommen til Harmonic Egg®</h1>
+        <p>En naturlig og kraftfull opplevelse som hjelper deg å finne ro og balanse innenfra gjennom lyd, lys og geometrisk design.</p>
+        <p><strong>Skandinavias eneste Harmonic Egg®</strong></p>
+        <div style="margin-top: 2rem;">
+            <a href="/booking" class="btn-primary" style="margin-right: 1rem;">Book din sesjon</a>
+            <a href="/om-harmonic-egg" class="btn-secondary">Les mer</a>
+        </div>
+    </div>
+</section>
+
+<!-- What is Harmonic Egg Section -->
+<section class="section" style="background-color: white;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Hva er Harmonic Egg®?</h2>
+            <p>Opplev en dyp tilstand av ro og balanse</p>
+        </div>
+        
+        <div class="grid grid-2" style="align-items: center;">
+            <div>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Harmonic Egg er utviklet for å støtte <strong>mental, emosjonell, fysisk og indre velvære</strong>. 
+                    Et resonanskammer bygget i naturlig tre og formet med et unikt geometrisk design, 
+                    der lys og lyd skaper harmoni.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Sesjonene kan bidra til å frigjøre stress, stimulere kroppens naturlige detox-prosesser 
+                    og gi økt energi og vitalitet.
+                </p>
+                <blockquote style="border-left: 4px solid var(--color-primary); padding-left: 1rem; margin: 2rem 0; font-style: italic; color: #666;">
+                    "Fremtiden vil være basert på energi, frekvens og vibrasjon"
+                    <br><strong>— Nikola Tesla (1856 - 1943)</strong>
+                </blockquote>
+            </div>
+            <div>
+                <div class="video-container">
+                    <video controls poster="/assets/images/harmonic-egg-thumbnail.jpg">
+                        <source src="/assets/videos/Meet the Harmonic Egg® Now at Tamborine Mountain QLD Australia.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Fordeler med Harmonic Egg®</h2>
+            <p>Opplev transformasjon på flere nivåer</p>
+        </div>
+        
+        <div class="grid grid-3">
+            {% for benefit in site.benefits %}
+            <div class="card text-center">
+                <div class="benefit-icon">{{ benefit.icon }}</div>
+                <h3>{{ benefit.title }}</h3>
+                <p>{{ benefit.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="section" style="background-color: white;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Hva kan Harmonic Egg® hjelpe med?</h2>
+            <p>Vi tilbyr støtte for ulike behov</p>
+        </div>
+        
+        <div class="grid grid-2">
+            {% for service in site.services %}
+            <div class="card">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">{{ service.icon }}</div>
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="section" style="background: linear-gradient(135deg, rgba(168, 218, 220, 0.2) 0%, rgba(139, 115, 85, 0.2) 100%);">
+    <div class="container">
+        <div class="section-title">
+            <h2>Hva sier våre kunder?</h2>
+            <p>Over 400 fornøyde kunder har opplevd helbredelse med Harmonic Egg®</p>
+        </div>
+        
+        <div class="grid grid-3">
+            {% for testimonial in site.testimonials %}
+            <div class="testimonial">
+                <p class="testimonial-text">{{ testimonial.text }}</p>
+                <p class="testimonial-author">— {{ testimonial.author }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section" style="background-color: var(--color-dark); color: white; text-align: center;">
+    <div class="container">
+        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Klar til å oppleve Harmonic Egg®?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+            Book din første sesjon i dag til introduksjonspris kr 799,-
+        </p>
+        <a href="/booking" class="btn-primary" style="font-size: 1.2rem; padding: 1rem 2rem;">Book sesjon nå</a>
+        <p style="margin-top: 1.5rem; opacity: 0.8;">
+            Eller ring oss på <a href="tel:+4740222828" style="color: white; text-decoration: underline;">+47 402 22 828</a>
+        </p>
+    </div>
+</section>
