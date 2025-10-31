@@ -1,4 +1,5 @@
 ---
+layout: blog-post.njk
 title: Last main branch test
 description: ---
 author: Brage
