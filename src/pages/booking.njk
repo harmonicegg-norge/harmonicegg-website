@@ -14,7 +14,7 @@ permalink: /booking/
 
 <section class="section">
     <div class="container">
-        <div style="max-width: 800px; margin: 0 auto;">
+        <div style="max-width: 1400px; margin: 0 auto;">
             <div class="card" style="background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%); color: white; padding: 2rem; margin-bottom: 2rem; text-align: center;">
                 <h2 style="color: white; margin-bottom: 1rem;">🎉 Spesialtilbud for nye kunder</h2>
                 <p style="font-size: 1.3rem; margin-bottom: 0.5rem;">
@@ -23,24 +23,15 @@ permalink: /booking/
                 <p style="opacity: 0.9;">(Ordinærpris: kr 1.599,-)</p>
             </div>
             
-            <div class="card">
-                <h2>Slik booker du:</h2>
-                <ol style="line-height: 2; margin-top: 1rem;">
-                    <li>Klikk på "Book online" knappen nedenfor</li>
-                    <li>Registrer deg med dine opplysninger (kun første gang)</li>
-                    <li>Velg type sesjon og ønsket tidspunkt</li>
-                    <li>Bekreft din booking</li>
-                    <li>Du mottar bekreftelse på e-post</li>
-                </ol>
-            </div>
-            
-            <div style="text-align: center; margin: 3rem 0;">
-                <a href="https://system.easypractice.net/book/harmonic-egg-norge-as-velvaere-innenfra" 
-                   target="_blank" 
-                   class="btn-primary" 
-                   style="font-size: 1.3rem; padding: 1rem 3rem; display: inline-block;">
-                    📅 Book online nå
-                </a>
+            <!-- Embedded EasyPractice booking system with full layout -->
+            <div style="margin: 3rem 0; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden;">
+                <iframe
+                    src="https://system.easypractice.net/book/harmonic-egg-norge-as-velvaere-innenfra#choose-service"
+                    width="100%"
+                    height="1100"
+                    frameborder="0"
+                    style="border: none; display: block;">
+                </iframe>
             </div>
             
             <div class="card" style="background-color: var(--color-light);">
