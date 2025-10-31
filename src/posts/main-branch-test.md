@@ -1,4 +1,5 @@
 ---
+layout: blog-post.njk
 title: Main branch test
 description: Test
 author: "Brage "

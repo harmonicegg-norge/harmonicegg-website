@@ -1,4 +1,5 @@
 ---
+layout: blog-post.njk
 title: Test
 description: test test
 author: "Brage "

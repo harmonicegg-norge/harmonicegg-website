@@ -11,6 +11,9 @@ collections:
     folder: "src/posts"
     create: true
     slug: "{{slug}}"
+    defaults:
+      - - "layout"
+        - "blog-post.njk"
     fields:
       - { label: "Tittel", name: "title", widget: "string" }
       - { label: "Beskrivelse", name: "description", widget: "string" }
