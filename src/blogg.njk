@@ -1,0 +1,48 @@
+---
+layout: base.njk
+title: Blogg
+description: Les artikler om energiterapi, Harmonic Egg og personlig vekst
+permalink: /blogg/
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h1>Blogg</h1>
+      <p>Artikler om energiterapi, velvære og personlig utvikling</p>
+    </div>
+
+    <div class="blog-grid">
+      {% for post in collections.blog | reverse %}
+        {% if post.data.draft != true %}
+        <article class="blog-card">
+          {% if post.data.image %}
+          <div class="blog-card-image">
+            <img src="{{ post.data.image }}" alt="{{ post.data.title }}">
+          </div>
+          {% endif %}
+
+          <div class="blog-card-content">
+            <h3>{{ post.data.title }}</h3>
+
+            <div class="blog-card-meta">
+              <span class="blog-date">{{ post.data.date | dateDisplay }}</span>
+              {% if post.data.category %}<span class="blog-category">{{ post.data.category }}</span>{% endif %}
+            </div>
+
+            <p>{{ post.data.description }}</p>
+
+            <a href="{{ post.url }}" class="btn-primary">Les mer</a>
+          </div>
+        </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if collections.blog.length == 0 %}
+    <div class="no-posts">
+      <p>Ingen bloggposter ennå. Kom tilbake snart!</p>
+    </div>
+    {% endif %}
+  </div>
+</section>

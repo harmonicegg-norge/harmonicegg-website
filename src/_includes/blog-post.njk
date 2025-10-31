@@ -1,0 +1,30 @@
+---
+layout: base.njk
+---
+
+<article class="blog-post">
+  <div class="container">
+    <div class="blog-header">
+      <h1>{{ title }}</h1>
+      <div class="blog-meta">
+        <span class="blog-author">Av {{ author }}</span>
+        <span class="blog-date">{{ date | dateDisplay }}</span>
+        {% if category %}<span class="blog-category">{{ category }}</span>{% endif %}
+      </div>
+    </div>
+
+    {% if image %}
+    <div class="blog-image">
+      <img src="{{ image }}" alt="{{ title }}">
+    </div>
+    {% endif %}
+
+    <div class="blog-content">
+      {{ content | safe }}
+    </div>
+
+    <div class="blog-footer">
+      <a href="/blogg" class="btn-primary">Tilbake til blogg</a>
+    </div>
+  </div>
+</article>
