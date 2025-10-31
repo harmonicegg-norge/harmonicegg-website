@@ -4,15 +4,22 @@ title: Harmonic Egg Energiterapi - Skandinavias eneste Harmonic Egg
 description: Opplev Skandinavias eneste Harmonic Egg i Sandnes. Energiterapi gjennom lyd, lys og hellig geometri for mental, emosjonell og fysisk velvære.
 ---
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="container">
-        <h1>Velkommen til Harmonic Egg®</h1>
-        <p>En naturlig og kraftfull opplevelse som hjelper deg å finne ro og balanse innenfra gjennom lyd, lys og geometrisk design.</p>
-        <p><strong>Skandinavias eneste Harmonic Egg®</strong></p>
-        <div style="margin-top: 2rem;">
-            <a href="/booking" class="btn-primary" style="margin-right: 1rem;">Book din sesjon</a>
-            <a href="/om-harmonic-egg" class="btn-secondary">Les mer</a>
+<!-- Hero Section with Image Palette -->
+<section class="hero-palette">
+    <div class="hero-content">
+        <div class="hero-image-container">
+            <div class="hero-image-palette">
+                <img src="/images/harmonic egg, front page.png" alt="Harmonic Egg" class="palette-image">
+            </div>
+        </div>
+        <div class="hero-text-overlay">
+            <h1>Velkommen til Harmonic Egg®</h1>
+            <p>En naturlig og kraftfull opplevelse som hjelper deg å finne ro og balanse innenfra gjennom lyd, lys og geometrisk design.</p>
+            <p><strong>Skandinavias eneste Harmonic Egg®</strong></p>
+            <div style="margin-top: 2rem;">
+                <a href="/booking" class="btn-primary" style="margin-right: 1rem;">Book din sesjon</a>
+                <a href="/om-harmonic-egg" class="btn-secondary">Les mer</a>
+            </div>
         </div>
     </div>
 </section>
@@ -60,35 +67,62 @@ description: Opplev Skandinavias eneste Harmonic Egg i Sandnes. Energiterapi gje
             <h2>Fordeler med Harmonic Egg®</h2>
             <p>Opplev transformasjon på flere nivåer</p>
         </div>
-        
-        <div class="grid grid-3">
-            {% for benefit in site.benefits %}
-            <div class="card text-center">
-                <div class="benefit-icon">{{ benefit.icon }}</div>
-                <h3>{{ benefit.title }}</h3>
-                <p>{{ benefit.description }}</p>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
 
-<!-- Services Section -->
-<section class="section" style="background-color: white;">
-    <div class="container">
-        <div class="section-title">
-            <h2>Hva kan Harmonic Egg® hjelpe med?</h2>
-            <p>Vi tilbyr støtte for ulike behov</p>
-        </div>
-        
-        <div class="grid grid-2">
-            {% for service in site.services %}
-            <div class="card">
-                <div style="font-size: 3rem; margin-bottom: 1rem;">{{ service.icon }}</div>
-                <h3>{{ service.title }}</h3>
-                <p>{{ service.description }}</p>
+        <div class="benefits-layout">
+            <div class="benefit-item benefit-item-odd">
+                <div class="benefit-image">
+                    <img src="/images/SkaderSmerte.jpg" alt="Skader og smerte">
+                </div>
+                <div class="benefit-text">
+                    <h3>Skader & smerte</h3>
+                    <p>Smerte er hjernens varselsignal. Lindring kommer når nervesystemet finner ro.</p>
+                    <a href="#" class="btn-primary">Les mer</a>
+                </div>
             </div>
-            {% endfor %}
+
+            <div class="benefit-item benefit-item-even">
+                <div class="benefit-image">
+                    <img src="/images/SykdomLidelser.jpg" alt="Sykdom og lidelser">
+                </div>
+                <div class="benefit-text">
+                    <h3>Sykdom & lidelser</h3>
+                    <p>Lindring fra indre uro, relasjonsutfordringer og utbrenthet med skreddersydd terapimetode.</p>
+                    <a href="#" class="btn-primary">Les mer</a>
+                </div>
+            </div>
+
+            <div class="benefit-item benefit-item-odd">
+                <div class="benefit-image">
+                    <img src="/images/IndrePåfyll.jpg" alt="Indre påfyll">
+                </div>
+                <div class="benefit-text">
+                    <h3>Indre påfyll</h3>
+                    <p>Mange har opplevd økt følelsesmessig og åndelig styrke gjennom våre sesjoner.</p>
+                    <a href="#" class="btn-primary">Les mer</a>
+                </div>
+            </div>
+
+            <div class="benefit-item benefit-item-even">
+                <div class="benefit-image">
+                    <img src="/images/StressAngst.jpg" alt="Stress og angst">
+                </div>
+                <div class="benefit-text">
+                    <h3>Stress & angst</h3>
+                    <p>Få hjelp til å bringe kroppen ut av 'kamp, flukt eller frys'-modus og tilbake i balanse.</p>
+                    <a href="#" class="btn-primary">Les mer</a>
+                </div>
+            </div>
+
+            <div class="benefit-item benefit-item-odd">
+                <div class="benefit-image">
+                    <img src="/images/KlarhetRestitusjon.jpg" alt="Klarhet og restitusjon">
+                </div>
+                <div class="benefit-text">
+                    <h3>Klarhet og restitusjon</h3>
+                    <p>Få skarpere fokus, sterkere sinn, økt konsentrasjon og høyere yteevne.</p>
+                    <a href="#" class="btn-primary">Les mer</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -100,20 +134,43 @@ description: Opplev Skandinavias eneste Harmonic Egg i Sandnes. Energiterapi gje
             <h2>Hva sier våre kunder?</h2>
             <p>Over 400 fornøyde kunder har opplevd helbredelse med Harmonic Egg®</p>
         </div>
-        
-        <div class="grid grid-3">
-            {% for testimonial in site.testimonials %}
-            <div class="testimonial">
-                <p class="testimonial-text">{{ testimonial.text }}</p>
-                <p class="testimonial-author">— {{ testimonial.author }}</p>
+
+        <div class="testimonial-carousel">
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    {% for testimonial in site.testimonials %}
+                    <div class="carousel-slide">
+                        <div class="testimonial">
+                            <p class="testimonial-text">{{ testimonial.text }}</p>
+                            <p class="testimonial-author">— {{ testimonial.author }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
-            {% endfor %}
+
+            <button class="carousel-btn carousel-btn-prev" aria-label="Forrige testimonial">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <button class="carousel-btn carousel-btn-next" aria-label="Neste testimonial">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+
+            <div class="carousel-dots">
+                {% for testimonial in site.testimonials %}
+                <button class="carousel-dot {% if loop.index == 1 %}active{% endif %}" data-index="{{ loop.index0 }}" aria-label="Testimonial {{ loop.index }}"></button>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>
 
 <!-- CTA Section -->
-<section class="section" style="background-color: var(--color-dark); color: white; text-align: center;">
+<section class="section" style="background-color: #913795; color: white; text-align: center;">
     <div class="container">
         <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Klar til å oppleve Harmonic Egg®?</h2>
         <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">

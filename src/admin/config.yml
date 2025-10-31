@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: development
+
+media_folder: "src/images/blog"
+public_folder: "/images/blog"
+
+collections:
+  - name: "blog"
+    label: "Bloggposter"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Tittel", name: "title", widget: "string" }
+      - { label: "Beskrivelse", name: "description", widget: "string" }
+      - { label: "Forfatter", name: "author", widget: "string", default: "Christina" }
+      - { label: "Dato", name: "date", widget: "datetime" }
+      - { label: "Fremhevet bilde", name: "image", widget: "image" }
+      - { label: "Innhold", name: "body", widget: "markdown" }
+      - { label: "Kategori", name: "category", widget: "string" }
