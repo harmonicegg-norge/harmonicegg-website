@@ -40,6 +40,11 @@
     }
     </script>
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/style.css">
 
@@ -55,8 +60,7 @@
         <nav class="navbar">
             <div class="container">
                 <a href="/" class="logo">
-                    <span class="logo-text">Harmonic Egg</span>
-                    <span class="logo-subtitle">Energiterapi</span>
+                    <img src="/images/Harmonic-Egg-Logo.webp" alt="Harmonic Egg Energiterapi" class="logo-image">
                 </a>
                 
                 <button class="menu-toggle" aria-label="Toggle menu">
@@ -68,10 +72,18 @@
                 <ul class="nav-menu">
                     <li><a href="/">Hjem</a></li>
                     <li><a href="/om-harmonic-egg">Om Harmonic Egg</a></li>
-                    <li><a href="/tjenester">Tjenester</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Fordeler</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/pages/fordeler/skader-smerte">Skader & smerte</a></li>
+                            <li><a href="/pages/fordeler/sykdom-lidelser">Sykdom & lidelser</a></li>
+                            <li><a href="/pages/fordeler/indre-pafyll">Indre påfyll</a></li>
+                            <li><a href="/pages/fordeler/stress-angst">Stress & angst</a></li>
+                            <li><a href="/pages/fordeler/klarhet-restitusjon">Klarhet og restitusjon</a></li>
+                        </ul>
+                    </li>
                     <li><a href="/priser">Priser</a></li>
                     <li><a href="/blogg">Blogg</a></li>
-                    <li><a href="/kontakt">Kontakt</a></li>
                     <li><a href="/booking" class="btn-primary">Book sesjon</a></li>
                 </ul>
             </div>
