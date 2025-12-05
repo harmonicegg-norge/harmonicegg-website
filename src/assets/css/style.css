@@ -211,7 +211,8 @@ p {
   transition: var(--transition);
 }
 
-.dropdown:hover .dropdown-toggle::after {
+.dropdown:hover .dropdown-toggle::after,
+.dropdown.active .dropdown-toggle::after {
   transform: rotate(180deg);
 }
 
@@ -233,7 +234,8 @@ p {
   margin-top: var(--spacing-xs);
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown.active .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -1411,6 +1413,101 @@ textarea {
 
   .benefit-detail-text {
     padding: var(--spacing-sm);
+  }
+}
+
+/* ===== FAQ Accordion Styles ===== */
+.faq-container {
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: white;
+  transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.5rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: rgba(145, 55, 149, 0.05);
+}
+
+.faq-question span:first-child {
+  flex: 1;
+  padding-right: 1rem;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  transition: transform 0.3s ease;
+  min-width: 30px;
+  text-align: center;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.faq-answer p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Responsive FAQ */
+@media (max-width: 768px) {
+  .faq-question {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .faq-answer {
+    padding: 0 1rem;
+  }
+
+  .faq-item.active .faq-answer {
+    padding: 0 1rem 1rem;
+  }
+
+  .faq-answer p {
+    font-size: 1rem;
   }
 }
 

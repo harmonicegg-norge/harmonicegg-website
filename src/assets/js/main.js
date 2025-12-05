@@ -21,11 +21,11 @@ window.addEventListener('scroll', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
-            
+
             // Animate hamburger icon
             const spans = menuToggle.querySelectorAll('span');
             if (navMenu.classList.contains('active')) {
@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 spans[2].style.transform = 'none';
             }
         });
-        
-        // Close menu when clicking on a link
-        const navLinks = navMenu.querySelectorAll('a');
+
+        // Close menu when clicking on a link (but not dropdown toggles)
+        const navLinks = navMenu.querySelectorAll('a:not(.dropdown-toggle)');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -51,6 +51,40 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Mobile Dropdown Toggle
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+
+        if (toggle) {
+            toggle.addEventListener('click', function(e) {
+                // On mobile, toggle dropdown on click
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+
+                    // Close other dropdowns
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
 });
 
 // Smooth scroll for anchor links
@@ -182,4 +216,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start autoplay
     startAutoplay();
     updateCarousel();
+});
+
+// FAQ Accordion
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
 });

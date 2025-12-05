@@ -77,50 +77,62 @@ module.exports = {
   
   prices: [
     {
+      name: "Barn under 10 år",
+      price: "999",
+      description: "Introduksjonspris",
+      features: [
+        "En trygg, myk og tilpasset opplevelse",
+        "For de aller minste",
+        "Sett av 1 time",
+        "Pris gjelder 2025 / lanseringsperiode"
+      ],
+      featured: false
+    },
+    {
       name: "Førstegangsbesøk",
       price: "799",
-      originalPrice: "1.599",
-      description: "Halv pris for første sesjon",
+      originalPrice: "1 599",
+      description: "Halv pris",
       features: [
-        "60 minutters sesjon",
+        "En fin måte å oppleve egget",
+        "75 minutters sesjon",
         "Personlig konsultasjon",
-        "Introduksjon til Harmonic Egg",
-        "Ettersamtale"
+        "Introduksjon til Harmonic Egg"
       ],
       featured: true
     },
     {
       name: "Enkel sesjon",
-      price: "1.599",
-      description: "Per sesjon",
+      price: "1 490",
+      description: "Vinterro-pris ut januar",
       features: [
-        "60 minutters sesjon",
-        "Skreddersydd musikk og lys",
+        "For deg som ønsker påfyll",
+        "75 minutters sesjon",
         "Hver 10. sesjon gratis",
-        "Fleksibel booking"
+        "Tilpasset musikk og lys"
       ],
       featured: false
     },
     {
       name: "Klippekort - 3 sesjoner",
-      price: "4.299",
-      description: "Spar 499 kr",
+      price: "3 990",
+      description: "Spar kr 480",
       features: [
-        "3 x 60 minutters sesjoner",
+        "Gi kroppen tid til å fordype prosessen",
+        "3 x 75 minutters sesjoner",
         "Gyldig i 6 måneder",
-        "Kan deles med familie",
         "Prioritert booking"
       ],
       featured: false
     },
     {
-      name: "Medlemskap",
-      price: "1.299",
+      name: "Medlemskap - 1 år",
+      price: "1 299",
       description: "Per måned",
       features: [
         "Min. 1 sesjon per måned",
-        "Prioritert booking",
-        "Ekstra sesjoner til redusert pris",
+        "Prioritet på booking",
+        "Individuell plan",
         "Kan sies opp når som helst"
       ],
       featured: false
