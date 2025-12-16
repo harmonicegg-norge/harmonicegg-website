@@ -239,3 +239,49 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Newsletter Popup
+document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('newsletter-popup');
+    const closeBtn = document.querySelector('.newsletter-close');
+    const form = popup?.querySelector('form');
+
+    // Check if user has already seen or submitted the popup
+    const hasSeenPopup = localStorage.getItem('newsletterPopupSeen');
+    const hasSubscribed = localStorage.getItem('newsletterSubscribed');
+
+    if (!hasSeenPopup && !hasSubscribed && popup) {
+        // Show popup after 5 seconds
+        setTimeout(() => {
+            popup.classList.add('show');
+        }, 5000);
+    }
+
+    // Close popup when clicking X button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            popup.classList.remove('show');
+            localStorage.setItem('newsletterPopupSeen', 'true');
+        });
+    }
+
+    // Close popup when clicking outside
+    if (popup) {
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.classList.remove('show');
+                localStorage.setItem('newsletterPopupSeen', 'true');
+            }
+        });
+    }
+
+    // Handle form submission
+    if (form) {
+        form.addEventListener('submit', function() {
+            localStorage.setItem('newsletterSubscribed', 'true');
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 1000);
+        });
+    }
+});

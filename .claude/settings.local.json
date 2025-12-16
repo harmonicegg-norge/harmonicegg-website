@@ -5,7 +5,11 @@
       "Bash(npm start)",
       "WebFetch(domain:www.harmonicegg.no)",
       "Bash(cat:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(dir:*)",
+      "WebFetch(domain:harmonicegg.com)",
+      "Bash(ls:*)",
+      "Bash(findstr:*)"
     ],
     "deny": [],
     "ask": []

@@ -11,6 +11,17 @@ module.exports = {
       postalCode: "4313",
       city: "Sandnes",
       country: "Norge"
+    },
+    social: {
+      instagram: "https://www.instagram.com/harmoniceggchristina",
+      facebook: "https://www.facebook.com/harmoniceggvelvareinnenfra"
+    },
+    analytics: {
+      // TODO: Update these IDs from Christina before going live
+      // Current site uses: GA: G-S3P15VX8HX, GTM: GTM-N2C89CB4, FB: 1683333515546002
+      googleAnalytics: process.env.GOOGLE_ANALYTICS_ID || "", // e.g., "G-XXXXXXXXXX"
+      googleTagManager: process.env.GOOGLE_TAG_MANAGER_ID || "", // e.g., "GTM-XXXXXXXX"
+      facebookPixel: process.env.FACEBOOK_PIXEL_ID || "" // e.g., "1234567890123456"
     }
   },
   
@@ -77,27 +88,15 @@ module.exports = {
   
   prices: [
     {
-      name: "Barn under 10 år",
-      price: "999",
-      description: "Introduksjonspris",
-      features: [
-        "En trygg, myk og tilpasset opplevelse",
-        "For de aller minste",
-        "Sett av 1 time",
-        "Pris gjelder 2025 / lanseringsperiode"
-      ],
-      featured: false
-    },
-    {
-      name: "Førstegangsbesøk",
+      name: "KAMPANJE ✨ -50%",
       price: "799",
       originalPrice: "1 599",
-      description: "Halv pris",
+      description: "For nye kunder",
       features: [
         "En fin måte å oppleve egget",
         "75 minutters sesjon",
-        "Personlig konsultasjon",
-        "Introduksjon til Harmonic Egg"
+        "Personlig konsultasjon før og etter",
+        "Bestilles kun hvis du ikke har prøvd før"
       ],
       featured: true
     },
@@ -108,32 +107,32 @@ module.exports = {
       features: [
         "For deg som ønsker påfyll",
         "75 minutters sesjon",
-        "Hver 10. sesjon gratis",
+        "Hver 6. sesjon er gratis",
         "Tilpasset musikk og lys"
       ],
       featured: false
     },
     {
-      name: "Klippekort - 3 sesjoner",
-      price: "3 990",
-      description: "Spar kr 480",
+      name: "Barn under 10 år",
+      price: "999",
+      description: "Introduksjonspris 2025",
       features: [
-        "Gi kroppen tid til å fordype prosessen",
-        "3 x 75 minutters sesjoner",
-        "Gyldig i 6 måneder",
-        "Prioritert booking"
+        "Trygg opplevelse for de minste",
+        "30-40 min i egget",
+        "Ekstra tid før og etter",
+        "Tilpasset barnets behov"
       ],
       featured: false
     },
     {
-      name: "Medlemskap - 1 år",
+      name: "Medlemskap",
       price: "1 299",
       description: "Per måned",
       features: [
         "Min. 1 sesjon per måned",
         "Prioritet på booking",
         "Individuell plan",
-        "Kan sies opp når som helst"
+        "Fleksibelt - kan sies opp når som helst"
       ],
       featured: false
     }

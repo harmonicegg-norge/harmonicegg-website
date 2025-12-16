@@ -20,22 +20,28 @@ permalink: /kontakt/
                 <h2>Send oss en melding</h2>
                 <p style="margin-bottom: 2rem;">Fyll ut skjemaet så tar vi kontakt med deg så snart som mulig.</p>
                 
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <!-- Hidden fields for Netlify -->
+                    <input type="hidden" name="form-name" value="contact">
+                    <p style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
+
                     <div class="form-group">
                         <label for="name">Navn *</label>
                         <input type="text" id="name" name="name" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="email">E-post *</label>
                         <input type="email" id="email" name="email" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="phone">Telefon</label>
                         <input type="tel" id="phone" name="phone">
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="subject">Emne</label>
                         <select id="subject" name="subject">
@@ -46,14 +52,18 @@ permalink: /kontakt/
                             <option value="other">Annet</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="message">Melding *</label>
-                        <textarea id="message" name="message" required></textarea>
+                        <textarea id="message" name="message" rows="6" required></textarea>
                     </div>
-                    
+
                     <button type="submit" class="btn-primary" style="width: 100%;">Send melding</button>
                 </form>
+
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                    * Påkrevde felt. Meldinger sendes direkte til <strong>christina@harmonicegg.no</strong>
+                </p>
             </div>
             
             <!-- Contact Information -->

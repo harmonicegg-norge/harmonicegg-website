@@ -53,8 +53,53 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+    <!-- Google Tag Manager -->
+    {% if site.site.analytics.googleTagManager %}
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','{{ site.site.analytics.googleTagManager }}');</script>
+    {% endif %}
+
+    <!-- Google Analytics -->
+    {% if site.site.analytics.googleAnalytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.site.analytics.googleAnalytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.site.analytics.googleAnalytics }}');
+    </script>
+    {% endif %}
+
+    <!-- Facebook Pixel -->
+    {% if site.site.analytics.facebookPixel %}
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '{{ site.site.analytics.facebookPixel }}');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id={{ site.site.analytics.facebookPixel }}&ev=PageView&noscript=1"
+    /></noscript>
+    {% endif %}
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    {% if site.site.analytics.googleTagManager %}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site.site.analytics.googleTagManager }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {% endif %}
+
     <!-- Header -->
     <header class="site-header">
         <nav class="navbar">
@@ -62,13 +107,13 @@
                 <a href="/" class="logo">
                     <img src="/images/Harmonic-Egg-Logo.webp" alt="Harmonic Egg Energiterapi" class="logo-image">
                 </a>
-                
+
                 <button class="menu-toggle" aria-label="Toggle menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                
+
                 <ul class="nav-menu">
                     <li><a href="/">Hjem</a></li>
                     <li class="dropdown">
@@ -76,12 +121,9 @@
                         <ul class="dropdown-menu">
                             <li><a href="/om-harmonic-egg#hva-er">Hva er Harmonic Egg?</a></li>
                             <li><a href="/om-harmonic-egg#hvordan-virker">Hvordan det virker</a></li>
-                            <li><a href="/om-harmonic-egg#vitenskapen">Vitenskapen bak</a></li>
-                            <li><a href="/om-harmonic-egg#kraftfullt">Hvorfor mest kraftfullt</a></li>
-                            <li><a href="/om-harmonic-egg#christina">Christina's historie</a></li>
-                            <li><a href="/om-harmonic-egg#gail-lynn">Gail Lynn - Oppfinneren</a></li>
+                            <li><a href="/om-harmonic-egg#vitenskapen-teknologi">Vitenskapen og teknologien</a></li>
+                            <li><a href="/om-harmonic-egg#om-oss">Om oss</a></li>
                             <li><a href="/om-harmonic-egg#forventninger">Hva kan du forvente?</a></li>
-                            <li><a href="/om-harmonic-egg#etterstell">Etterstell-veiledning</a></li>
                             <li><a href="/om-harmonic-egg#faq">Ofte stilte spørsmål</a></li>
                         </ul>
                     </li>
@@ -95,10 +137,23 @@
                             <li><a href="/pages/fordeler/klarhet-restitusjon">Klarhet og restitusjon</a></li>
                         </ul>
                     </li>
-                    <li><a href="/priser">Priser</a></li>
                     <li><a href="/blogg">Blogg</a></li>
+                    <li><a href="/kontakt">Kontakt</a></li>
                     <li><a href="/booking" class="btn-primary">Book sesjon</a></li>
                 </ul>
+
+                <div class="social-links" style="color: var(--color-text);">
+                    <a href="{{ site.site.social.facebook }}" target="_blank" aria-label="Facebook" style="color: inherit;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="{{ site.site.social.instagram }}" target="_blank" aria-label="Instagram" style="color: inherit;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </nav>
     </header>
@@ -142,12 +197,12 @@
                 <div class="footer-col">
                     <h3>Følg oss</h3>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/harmoniceggvelvareinnenfra" target="_blank" aria-label="Facebook">
+                        <a href="{{ site.site.social.facebook }}" target="_blank" aria-label="Facebook">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
-                        <a href="https://www.instagram.com/harmoniceggnorway" target="_blank" aria-label="Instagram">
+                        <a href="{{ site.site.social.instagram }}" target="_blank" aria-label="Instagram">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
@@ -161,6 +216,39 @@
             </div>
         </div>
     </footer>
+
+    <!-- Newsletter Popup -->
+    <div id="newsletter-popup" class="newsletter-popup">
+        <div class="newsletter-popup-content">
+            <button class="newsletter-close" aria-label="Lukk">&times;</button>
+
+            <div class="newsletter-icon">📬</div>
+            <h3>Få tips og tilbud direkte i innboksen!</h3>
+            <p>Meld deg på vårt nyhetsbrev og motta eksklusivt innhold om velvære og healing</p>
+
+            <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field-newsletter" class="newsletter-form">
+                <input type="hidden" name="form-name" value="newsletter">
+                <p style="display: none;">
+                    <label>Don't fill this out: <input name="bot-field-newsletter" /></label>
+                </p>
+
+                <div class="newsletter-input-group">
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Din e-postadresse"
+                        required>
+                    <button type="submit" class="btn-primary">
+                        Meld meg på
+                    </button>
+                </div>
+
+                <p class="newsletter-privacy">
+                    Vi respekterer ditt personvern. Du kan melde deg av når som helst.
+                </p>
+            </form>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="/assets/js/main.js"></script>

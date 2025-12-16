@@ -1,71 +1,18 @@
 ---
 layout: base.njk
 title: Priser - Harmonic Egg Energiterapi
-description: Se våre priser for Harmonic Egg sesjoner. Førstegangsbesøk til halv pris - kr 799. Enkeltsesjoner, klippekort og medlemskap tilgjengelig.
+description: Se våre priser for Harmonic Egg sesjoner. Førstegangsbesøk til halv pris - kr 799.
 permalink: /priser/
 ---
 
-<section class="hero" style="padding: 4rem 0; background: linear-gradient(135deg, rgba(145, 55, 149, 0.1) 0%, rgba(168, 218, 220, 0.1) 100%);">
-    <div class="container" style="text-align: center;">
-        <h1 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Gi kroppen stillhet – og sjelen plass til å puste.</h1>
-        <p style="font-size: 1.2rem; line-height: 1.8; max-width: 800px; margin: 0 auto 1rem;">
-            Opplev hvordan dyp hvile vekker ny energi, klarhet og nærvær.
-        </p>
-        <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 0 auto 1.5rem;">
-            Når spenninger slipper, åpnes rommet for indre trygghet, balanse og kontakt – med deg selv og menneskene rundt deg.
-        </p>
-        <p style="font-size: 1.2rem; margin-top: 2rem;">
-            Er du klar for å møte livet med mer ro, styrke og flyt? 💫
-        </p>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-        <div class="section-title">
-            <h2>🌿 Våre priser – Harmonic Egg velvære innenfra 🌿</h2>
-            <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">Prisene gjelder individuelle sesjoner</p>
-            <p style="font-style: italic; color: #666;">Hver opplevelse varer i 75 minutter og tilpasses deg med farger og lyd ut fra din intensjon.</p>
-        </div>
-        
-        <div class="grid grid-2" style="max-width: 1000px; margin: 0 auto;">
-            {% for price in site.prices %}
-            <div class="price-card {% if price.featured %}featured{% endif %}">
-                {% if price.featured %}
-                <div style="background: var(--color-primary); color: white; padding: 0.5rem; margin: -2rem -2rem 1rem; border-radius: 8px 8px 0 0;">
-                    <strong>⭐ BESTE TILBUD FOR NYE KUNDER</strong>
-                </div>
-                {% endif %}
-                
-                <h3>{{ price.name }}</h3>
-                <div class="price-amount">
-                    kr {{ price.price }},-
-                    {% if price.originalPrice %}
-                    <span style="font-size: 1rem; text-decoration: line-through; color: #999; display: block;">
-                        kr {{ price.originalPrice }},-
-                    </span>
-                    {% endif %}
-                </div>
-                <p style="color: #666; margin-bottom: 1.5rem;">{{ price.description }}</p>
-                
-                <ul class="price-features">
-                    {% for feature in price.features %}
-                    <li>{{ feature }}</li>
-                    {% endfor %}
-                </ul>
-                
-                <a href="/booking" class="btn-primary" style="margin-top: 1.5rem; width: 100%; display: block; text-align: center;">
-                    Book nå
-                </a>
-            </div>
-            {% endfor %}
-        </div>
-
-        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(168, 218, 220, 0.2) 0%, rgba(145, 55, 149, 0.2) 100%); border-radius: 12px;">
-            <p style="font-size: 1.1rem; font-style: italic; color: #666; margin-bottom: 0.5rem;">(Alle priser inkluderer mva.)</p>
-            <p style="font-size: 1.2rem; font-weight: 600; color: var(--color-primary);">
-                💫 Vi anbefaler 3–6 sesjoner for varig regulering og dypere effekt.
-            </p>
-        </div>
-    </div>
-</section>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url=/booking/">
+    <link rel="canonical" href="/booking/" />
+</head>
+<body>
+    <p>Vi har flyttet prisene til booking-siden. Du blir automatisk videresendt...</p>
+    <p>Hvis du ikke blir videresendt, <a href="/booking/">klikk her</a>.</p>
+</body>
+</html>

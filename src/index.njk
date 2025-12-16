@@ -5,8 +5,21 @@ description: Opplev Skandinavias eneste Harmonic Egg i Sandnes. Energiterapi gje
 ---
 
 <!-- Hero Section with Image Palette -->
-<section class="hero-palette">
-    <div class="hero-content">
+<section class="hero-palette" style="position: relative; overflow: hidden;">
+    <!-- Video Background -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden;">
+        <video id="bg-video-1" class="hero-bg-video" autoplay loop muted playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; opacity: 0; display: none;">
+            <source src="/assets/videos/12920671-hd_1920_1080_30fps.mp4" type="video/mp4">
+        </video>
+        <video id="bg-video-3" class="hero-bg-video" autoplay loop muted playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; opacity: 0; display: none;">
+            <source src="/assets/videos/7101912-uhd_2560_1440_25fps.mp4" type="video/mp4">
+        </video>
+        <video id="bg-video-4" class="hero-bg-video" autoplay loop muted playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover; opacity: 0; display: none;">
+            <source src="/assets/videos/7101913-uhd_2560_1440_25fps.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="hero-content" style="position: relative; z-index: 10;">
         <div class="hero-image-container">
             <div class="hero-image-palette">
                 <img src="/images/harmonic egg, front page.png" alt="Harmonic Egg" class="palette-image">
@@ -23,6 +36,21 @@ description: Opplev Skandinavias eneste Harmonic Egg i Sandnes. Energiterapi gje
         </div>
     </div>
 </section>
+
+<script>
+// Randomly select one of videos 1, 3, or 4 on page load
+(function() {
+    const videoOptions = [1, 3, 4];
+    const randomIndex = Math.floor(Math.random() * videoOptions.length);
+    const selectedVideoNum = videoOptions[randomIndex];
+
+    const selectedVideo = document.getElementById('bg-video-' + selectedVideoNum);
+    if (selectedVideo) {
+        selectedVideo.style.display = 'block';
+        selectedVideo.style.opacity = '0.6';
+    }
+})();
+</script>
 
 <!-- What is Harmonic Egg Section -->
 <section class="section" style="background-color: white;">
@@ -49,9 +77,15 @@ description: Opplev Skandinavias eneste Harmonic Egg i Sandnes. Energiterapi gje
                 </blockquote>
             </div>
             <div>
-                <div class="video-container">
-                    <video controls poster="/assets/images/harmonic-egg-thumbnail.jpg">
-                        <source src="/assets/videos/Meet the Harmonic Egg® Now at Tamborine Mountain QLD Australia.mp4" type="video/mp4">
+                <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 8px 30px rgba(145, 55, 149, 0.15);">
+                    <video
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        style="width: 100%; height: auto; display: block;"
+                    >
+                        <source src="/assets/videos/YTDown.com_YouTube_Harmonic-Egg-Highlight_Media_HM2FF4HP3Tk_001_1080p.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -71,7 +105,7 @@ description: Opplev Skandinavias eneste Harmonic Egg i Sandnes. Energiterapi gje
         <div class="benefits-layout">
             <div class="benefit-item benefit-item-odd">
                 <div class="benefit-image">
-                    <img src="/images/SkaderSmerte.jpg" alt="Skader og smerte">
+                    <img src="/images/SkaderSmerte.jpg" alt="Skader og smerte" loading="lazy">
                 </div>
                 <div class="benefit-text">
                     <h3>Skader & smerte</h3>
@@ -82,7 +116,7 @@ description: Opplev Skandinavias eneste Harmonic Egg i Sandnes. Energiterapi gje
 
             <div class="benefit-item benefit-item-even">
                 <div class="benefit-image">
-                    <img src="/images/SykdomLidelser.jpg" alt="Sykdom og lidelser">
+                    <img src="/images/SykdomLidelser.jpg" alt="Sykdom og lidelser" loading="lazy">
                 </div>
                 <div class="benefit-text">
                     <h3>Sykdom & lidelser</h3>
@@ -93,7 +127,7 @@ description: Opplev Skandinavias eneste Harmonic Egg i Sandnes. Energiterapi gje
 
             <div class="benefit-item benefit-item-odd">
                 <div class="benefit-image">
-                    <img src="/images/IndrePåfyll.jpg" alt="Indre påfyll">
+                    <img src="/images/IndrePåfyll.jpg" alt="Indre påfyll" loading="lazy">
                 </div>
                 <div class="benefit-text">
                     <h3>Indre påfyll</h3>
@@ -104,7 +138,7 @@ description: Opplev Skandinavias eneste Harmonic Egg i Sandnes. Energiterapi gje
 
             <div class="benefit-item benefit-item-even">
                 <div class="benefit-image">
-                    <img src="/images/StressAngst.jpg" alt="Stress og angst">
+                    <img src="/images/StressAngst.jpg" alt="Stress og angst" loading="lazy">
                 </div>
                 <div class="benefit-text">
                     <h3>Stress & angst</h3>
@@ -115,7 +149,7 @@ description: Opplev Skandinavias eneste Harmonic Egg i Sandnes. Energiterapi gje
 
             <div class="benefit-item benefit-item-odd">
                 <div class="benefit-image">
-                    <img src="/images/KlarhetRestitusjon.jpg" alt="Klarhet og restitusjon">
+                    <img src="/images/KlarhetRestitusjon.jpg" alt="Klarhet og restitusjon" loading="lazy">
                 </div>
                 <div class="benefit-text">
                     <h3>Klarhet og restitusjon</h3>
