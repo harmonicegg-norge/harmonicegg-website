@@ -127,31 +127,33 @@ Upload the contents of `_site/` folder to any web host, or use:
 
 ### Immediate Tasks:
 1. **Get Images** - Hero images, service photos, testimonial photos
-2. **Setup Contact Form** - Sign up for Formspree (free) and add form ID
-3. **Complete Remaining Pages:**
+2. **Setup Contact Form** - Configure Netlify Forms (built-in, free)
+3. **Add Analytics Tracking** - Google Analytics, Tag Manager, Facebook Pixel
+4. **Complete Remaining Pages:**
    - Om Harmonic Egg (About page)
    - Tjenester (Services detailed)
    - Blogg (Blog system)
    - Products/Shop section
 
 ### Optional Enhancements:
-4. **Add CMS** - Decap CMS for easy content editing
-5. **Add Analytics** - Google Analytics or Plausible
+5. **Add CMS** - Decap CMS for easy content editing (already have basic structure)
 6. **Optimize Images** - Compress and add actual photos
-7. **Add Testimonials** - Real customer quotes
+7. **Add More Testimonials** - Collect additional customer quotes
 8. **SEO Meta Images** - Create og-image for social sharing
+9. **Newsletter Integration** - Connect to Christina's email service
 
 ---
 
 ## 💰 Hosting & Deployment Options
 
 ### Option 1: Netlify (Recommended)
-**Cost:** FREE (or $19/month for Pro features)  
+**Cost:** FREE with 20 builds/month (or $19/month Pro for 300 builds)
 **Why:**
 - Automatic builds from Git
 - Free SSL certificate
 - CDN included
 - Forms handling (100 submissions/month free)
+- Netlify Identity for CMS (Christina can blog easily)
 - Easy domain connection
 
 **Setup:**
@@ -159,7 +161,14 @@ Upload the contents of `_site/` folder to any web host, or use:
 2. Connect Netlify to GitHub repo
 3. Set build command: `npm run build`
 4. Set publish directory: `_site`
-5. Done! Auto-deploys on every push
+5. Enable Netlify Identity (for CMS access)
+6. Done! Auto-deploys on every push
+
+**⚠️ Build Limit Note:**
+- Free tier: 20 builds/month
+- Each blog post/edit = 1 build
+- Monitor usage in dashboard
+- Upgrade to Pro if needed (still saves $181/month!)
 
 ### Option 2: Vercel
 **Cost:** FREE (or $20/month for Pro)  
@@ -278,10 +287,19 @@ Add **Decap CMS** (formerly Netlify CMS):
 - **Google Maps** - Location
 - **Social Media** - Facebook, Instagram links
 
-### To Add:
-- **Formspree** - Contact form handling (free tier sufficient)
-- **Google Analytics** - Traffic monitoring (free)
+### Ready to Add:
+- **Netlify Forms** - Contact form & newsletter (free, 100 submissions/month)
+- **Google Analytics** - GA4 tracking (ID: `G-S3P15VX8HX`)
+- **Google Tag Manager** - GTM container (ID: `GTM-N2C89CB4`)
+- **Facebook Pixel** - FB tracking (ID: `1683333515546002`)
 - **Google Search Console** - SEO monitoring (free)
+- **Netlify Identity** - CMS authentication (free)
+
+### Newsletter Service (To Be Determined):
+Ask Christina which service she currently uses:
+- Mailchimp
+- ConvertKit
+- Other email marketing platform
 
 ---
 
@@ -301,22 +319,37 @@ Add **Decap CMS** (formerly Netlify CMS):
 ## ⚠️ Important Notes
 
 ### Contact Form:
-Currently uses placeholder Formspree ID. Need to:
-1. Sign up at https://formspree.io (free)
-2. Replace `YOUR_FORM_ID` in kontakt.njk
-3. First 50 submissions/month are free
+Uses Netlify Forms (built-in). Need to:
+1. Update form in `src/pages/kontakt.njk` with:
+   - `name="contact"` attribute
+   - `data-netlify="true"` attribute
+   - Hidden input: `<input type="hidden" name="form-name" value="contact">`
+2. Deploy to Netlify (forms only work on live site)
+3. Configure email notifications in Netlify dashboard
+4. First 100 submissions/month are free
+
+### Analytics Tracking:
+Reuse existing tracking IDs from current site:
+1. Add tracking codes to `src/_includes/base.njk`:
+   - Google Analytics: `G-S3P15VX8HX`
+   - Google Tag Manager: `GTM-N2C89CB4`
+   - Facebook Pixel: `1683333515546002`
+2. See DEPLOYMENT.md for exact code snippets
+3. Verify tracking after deployment (24-48 hours for data)
 
 ### Images:
 Placeholder references in code. Need to:
 1. Add actual images to `src/assets/images/`
 2. Update image paths in templates
 3. Add alt text for accessibility
+4. Optimize/compress images before uploading
 
 ### Domain:
 To connect harmonicegg.no:
-1. Update DNS settings at current registrar
-2. Point to Netlify (they'll provide instructions)
-3. SSL certificate will be automatic
+1. Get access to domain registrar (ask Christina)
+2. Update DNS settings to point to Netlify
+3. Wait for DNS propagation (24-48 hours)
+4. SSL certificate will be automatic
 
 ---
 
