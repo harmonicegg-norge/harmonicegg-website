@@ -1,0 +1,27 @@
+# Redirect old Squarespace URLs to new structure (preserves SEO)
+
+# About/Info pages
+/harmonic-egg /om-harmonic-egg 301
+/harmonic-egg/ /om-harmonic-egg 301
+/om-oss-harmonic-egg /om-harmonic-egg 301
+/om-oss-harmonic-egg/ /om-harmonic-egg 301
+/reviews-2 /om-harmonic-egg 301
+/reviews-2/ /om-harmonic-egg 301
+
+# Blog
+/blogg-harmonic-egg-norge /blogg 301
+/blogg-harmonic-egg-norge/ /blogg 301
+
+# Shop - redirect to booking since we don't have shop
+/nettbutikk-harmonic-egg /booking 301
+/nettbutikk-harmonic-egg/ /booking 301
+/shop /booking 301
+/shop/ /booking 301
+
+# Prices page - keep as is, we have /priser page
+# (Note: /priser already exists as a page, no redirect needed)
+
+# Other common old URLs
+/forside / 301
+/hjem / 301
+/home / 301

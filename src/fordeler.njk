@@ -1,0 +1,133 @@
+---
+layout: base.njk
+title: Fordeler med Harmonic Egg - Harmonic Egg Norge
+description: Opplev transformasjon på flere nivåer med Harmonic Egg. Fra smertelindring til indre ro og mental klarhet.
+---
+
+<!-- Hero Section -->
+<section class="section" style="background: linear-gradient(135deg, rgba(168, 218, 220, 0.15) 0%, rgba(139, 115, 85, 0.15) 100%); padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);">
+    <div class="container">
+        <div class="section-title">
+            <h1 style="font-size: 2.8rem; margin-bottom: var(--spacing-sm);">Fordeler med Harmonic Egg®</h1>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">Opplev transformasjon på flere nivåer. Harmonic Egg® kan støtte deg med alt fra smertelindring og stressmestring til indre vekst og mental klarhet.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Grid Section -->
+<section class="section" style="background-color: white;">
+    <div class="container container-wide">
+        <div class="benefits-layout">
+            <div class="benefit-item benefit-item-odd">
+                <div class="benefit-image">
+                    <img src="/images/SkaderSmerte.jpg" alt="Skader og smerte">
+                </div>
+                <div class="benefit-text">
+                    <h3>Skader & smerte</h3>
+                    <p>Smerte er hjernens varselsignal. Lindring kommer når nervesystemet finner ro.</p>
+                    <a href="/pages/fordeler/skader-smerte" class="btn-primary">Les mer</a>
+                </div>
+            </div>
+
+            <div class="benefit-item benefit-item-even">
+                <div class="benefit-image">
+                    <img src="/images/SykdomLidelser.jpg" alt="Sykdom og lidelser">
+                </div>
+                <div class="benefit-text">
+                    <h3>Sykdom & lidelser</h3>
+                    <p>Lindring fra indre uro, relasjonsutfordringer og utbrenthet med skreddersydd terapimetode.</p>
+                    <a href="/pages/fordeler/sykdom-lidelser" class="btn-primary">Les mer</a>
+                </div>
+            </div>
+
+            <div class="benefit-item benefit-item-odd">
+                <div class="benefit-image">
+                    <img src="/images/IndrePåfyll.jpg" alt="Indre påfyll">
+                </div>
+                <div class="benefit-text">
+                    <h3>Indre påfyll</h3>
+                    <p>Mange har opplevd økt følelsesmessig og åndelig styrke gjennom våre sesjoner.</p>
+                    <a href="/pages/fordeler/indre-pafyll" class="btn-primary">Les mer</a>
+                </div>
+            </div>
+
+            <div class="benefit-item benefit-item-even">
+                <div class="benefit-image">
+                    <img src="/images/StressAngst.jpg" alt="Stress og angst">
+                </div>
+                <div class="benefit-text">
+                    <h3>Stress & angst</h3>
+                    <p>Få hjelp til å bringe kroppen ut av 'kamp, flukt eller frys'-modus og tilbake i balanse.</p>
+                    <a href="/pages/fordeler/stress-angst" class="btn-primary">Les mer</a>
+                </div>
+            </div>
+
+            <div class="benefit-item benefit-item-odd">
+                <div class="benefit-image">
+                    <img src="/images/KlarhetRestitusjon.jpg" alt="Klarhet og restitusjon">
+                </div>
+                <div class="benefit-text">
+                    <h3>Klarhet og restitusjon</h3>
+                    <p>Få skarpere fokus, sterkere sinn, økt konsentrasjon og høyere yteevne.</p>
+                    <a href="/pages/fordeler/klarhet-restitusjon" class="btn-primary">Les mer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="section" style="background: linear-gradient(135deg, rgba(168, 218, 220, 0.2) 0%, rgba(139, 115, 85, 0.2) 100%);">
+    <div class="container">
+        <div class="section-title">
+            <h2>Hva sier våre kunder?</h2>
+            <p>Over 400 fornøyde kunder har opplevd helbredelse med Harmonic Egg®</p>
+        </div>
+
+        <div class="testimonial-carousel">
+            <div class="carousel-wrapper">
+                <div class="carousel-track">
+                    {% for testimonial in site.testimonials %}
+                    <div class="carousel-slide">
+                        <div class="testimonial">
+                            <p class="testimonial-text">{{ testimonial.text }}</p>
+                            <p class="testimonial-author">— {{ testimonial.author }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <button class="carousel-btn carousel-btn-prev" aria-label="Forrige testimonial">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <button class="carousel-btn carousel-btn-next" aria-label="Neste testimonial">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+
+            <div class="carousel-dots">
+                {% for testimonial in site.testimonials %}
+                <button class="carousel-dot {% if loop.index == 1 %}active{% endif %}" data-index="{{ loop.index0 }}" aria-label="Testimonial {{ loop.index }}"></button>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section" style="background-color: #913795; color: white; text-align: center;">
+    <div class="container">
+        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem;">Klar til å oppleve Harmonic Egg®?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+            Book din første sesjon i dag til introduksjonspris kr 799,-
+        </p>
+        <a href="/booking" class="btn-primary" style="font-size: 1.2rem; padding: 1rem 2rem;">Book sesjon nå</a>
+        <p style="margin-top: 1.5rem; opacity: 0.8;">
+            Eller ring oss på <a href="tel:+4740222828" style="color: white; text-decoration: underline;">+47 402 22 828</a>
+        </p>
+    </div>
+</section>

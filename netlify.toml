@@ -1,0 +1,42 @@
+[build]
+  publish = "_site"
+  command = "eleventy"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Enable Netlify Forms
+[[plugins]]
+  package = "@netlify/plugin-forms"
+
+# Enable Netlify Identity for CMS login
+[context.production]
+  environment = { URL = "https://www.harmonicegg.no" }
+
+# Redirect configuration
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  conditions = {Role = ["admin"]}
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
