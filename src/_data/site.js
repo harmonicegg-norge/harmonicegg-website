@@ -17,11 +17,10 @@ module.exports = {
       facebook: "https://www.facebook.com/harmoniceggvelvareinnenfra"
     },
     analytics: {
-      // TODO: Update these IDs from Christina before going live
-      // Current site uses: GA: G-S3P15VX8HX, GTM: GTM-N2C89CB4, FB: 1683333515546002
-      googleAnalytics: process.env.GOOGLE_ANALYTICS_ID || "", // e.g., "G-XXXXXXXXXX"
-      googleTagManager: process.env.GOOGLE_TAG_MANAGER_ID || "", // e.g., "GTM-XXXXXXXX"
-      facebookPixel: process.env.FACEBOOK_PIXEL_ID || "" // e.g., "1234567890123456"
+      // Analytics IDs from current harmonicegg.no site (reusing to maintain tracking continuity)
+      googleAnalytics: process.env.GOOGLE_ANALYTICS_ID || "G-S3P15VX8HX",
+      googleTagManager: process.env.GOOGLE_TAG_MANAGER_ID || "GTM-N2C89CB4",
+      facebookPixel: process.env.FACEBOOK_PIXEL_ID || "1683333515546002"
     }
   },
   
