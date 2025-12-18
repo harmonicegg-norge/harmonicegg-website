@@ -352,6 +352,28 @@ p {
   align-items: center;
 }
 
+/* Hero Background Video Enhancement */
+.hero-bg-video {
+  /* Add blur for dreamy background effect */
+  /* Adjust blur value: 0px = sharp, 3px = subtle, 8px = heavy */
+  filter: blur(5px) contrast(1.05) saturate(1.15) brightness(0.92);
+
+  /* Force hardware acceleration for smoother playback */
+  transform: translate(-50%, -50%) translateZ(0);
+  will-change: transform;
+
+  /* Prevent blur on scaling */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Optional: Adjust blur on larger screens */
+@media (min-width: 1920px) {
+  .hero-bg-video {
+    /* More blur on large screens for bokeh effect */
+    filter: blur(6px) contrast(1.08) saturate(1.2) brightness(0.92);
+  }
+}
 
 .hero-content {
   max-width: 1400px;
@@ -974,6 +996,91 @@ p {
 .social-links a:hover {
   background-color: var(--color-primary);
   transform: translateY(-3px);
+}
+
+.footer-newsletter {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+.footer-newsletter-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.footer-newsletter-text h4 {
+  color: white;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.25rem;
+}
+
+.footer-newsletter-text p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footer-newsletter-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-newsletter-input {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-newsletter-input input[type="email"] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.footer-newsletter-input input[type="email"]:focus {
+  outline: none;
+  border-color: white;
+  background: white;
+}
+
+.footer-newsletter-input button {
+  padding: 0.75rem 1.5rem;
+  white-space: nowrap;
+  background: var(--color-dark);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.footer-newsletter-input button:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .footer-newsletter-content {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .footer-newsletter-input {
+    flex-direction: column;
+  }
+
+  .footer-newsletter-input button {
+    width: 100%;
+  }
 }
 
 .footer-bottom {

@@ -24,3 +24,20 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# 301 Redirects from old site URLs (ADD YOUR OLD URLs HERE)
+# Example redirects - UPDATE with actual old site URLs:
+# [[redirects]]
+#   from = "/about"
+#   to = "/om-harmonic-egg"
+#   status = 301
+#
+# [[redirects]]
+#   from = "/services"
+#   to = "/fordeler"
+#   status = 301
+#
+# [[redirects]]
+#   from = "/contact"
+#   to = "/kontakt"
+#   status = 301

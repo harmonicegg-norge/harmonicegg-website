@@ -6,6 +6,87 @@ media_folder: "src/images/blog"
 public_folder: "/images/blog"
 
 collections:
+  # Site-wide settings and content
+  - name: "settings"
+    label: "Innstillinger"
+    files:
+      - label: "Nettstedsinfo"
+        name: "site"
+        file: "src/_data/site.js"
+        fields:
+          - label: "Nettsted"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: "Nettstedstittel", name: "title", widget: "string" }
+              - { label: "Beskrivelse", name: "description", widget: "text" }
+              - { label: "URL", name: "url", widget: "string" }
+
+              - label: "Kontaktinfo"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - { label: "Telefon", name: "phone", widget: "string" }
+                  - { label: "E-post", name: "email", widget: "string" }
+                  - { label: "Adresse", name: "address", widget: "string" }
+                  - { label: "Postnummer og sted", name: "city", widget: "string" }
+
+              - label: "Sosiale medier"
+                name: "social"
+                widget: "object"
+                fields:
+                  - { label: "Facebook URL", name: "facebook", widget: "string" }
+                  - { label: "Instagram URL", name: "instagram", widget: "string" }
+
+              - label: "Åpningstider"
+                name: "hours"
+                widget: "object"
+                fields:
+                  - { label: "Mandag-Fredag", name: "weekdays", widget: "string" }
+                  - { label: "Lørdag", name: "saturday", widget: "string" }
+                  - { label: "Søndag", name: "sunday", widget: "string" }
+
+  # Pages content
+  - name: "pages"
+    label: "Sider"
+    files:
+      - label: "Forside"
+        name: "homepage"
+        file: "src/index.njk"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Tittel (SEO)", name: "title", widget: "string" }
+          - { label: "Beskrivelse (SEO)", name: "description", widget: "text" }
+          - { label: "Innhold", name: "body", widget: "markdown", hint: "Rediger hovedinnholdet på forsiden" }
+
+      - label: "Om Harmonic Egg"
+        name: "about"
+        file: "src/om-harmonic-egg.njk"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Tittel (SEO)", name: "title", widget: "string" }
+          - { label: "Beskrivelse (SEO)", name: "description", widget: "text" }
+          - { label: "Innhold", name: "body", widget: "markdown" }
+
+      - label: "Kontakt"
+        name: "contact"
+        file: "src/pages/kontakt.njk"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Tittel (SEO)", name: "title", widget: "string" }
+          - { label: "Beskrivelse (SEO)", name: "description", widget: "text" }
+          - { label: "Innhold", name: "body", widget: "markdown" }
+
+      - label: "Booking"
+        name: "booking"
+        file: "src/pages/booking.njk"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "Tittel (SEO)", name: "title", widget: "string" }
+          - { label: "Beskrivelse (SEO)", name: "description", widget: "text" }
+          - { label: "Innhold", name: "body", widget: "markdown" }
+
+  # Blog posts
   - name: "blog"
     label: "Bloggposter"
     folder: "src/posts"
@@ -19,6 +100,6 @@ collections:
       - { label: "Beskrivelse", name: "description", widget: "string" }
       - { label: "Forfatter", name: "author", widget: "string", default: "Christina" }
       - { label: "Dato", name: "date", widget: "datetime" }
-      - { label: "Fremhevet bilde", name: "image", widget: "image" }
+      - { label: "Fremhevet bilde", name: "image", widget: "image", required: false }
       - { label: "Innhold", name: "body", widget: "markdown" }
-      - { label: "Kategori", name: "category", widget: "string" }
+      - { label: "Kategori", name: "category", widget: "string", required: false }

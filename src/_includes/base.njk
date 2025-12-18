@@ -210,7 +210,34 @@
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Footer Newsletter Signup -->
+            <div class="footer-newsletter">
+                <div class="footer-newsletter-content">
+                    <div class="footer-newsletter-text">
+                        <h4>📬 Hold deg oppdatert</h4>
+                        <p>Motta tips og tilbud om velvære og healing</p>
+                    </div>
+                    <form name="newsletter-footer" method="POST" data-netlify="true" netlify-honeypot="bot-field-newsletter-footer" class="footer-newsletter-form">
+                        <input type="hidden" name="form-name" value="newsletter-footer">
+                        <input type="hidden" name="subject-line" value="Ny nyhetsbrev-påmelding (footer)">
+                        <p style="display: none;">
+                            <label>Don't fill this out: <input name="bot-field-newsletter-footer" /></label>
+                        </p>
+                        <div class="footer-newsletter-input">
+                            <input
+                                type="email"
+                                name="E-postadresse"
+                                placeholder="Din e-postadresse"
+                                required>
+                            <button type="submit" class="btn-secondary">
+                                Meld meg på
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Harmonic Egg Norge. Alle rettigheter reservert.</p>
             </div>
@@ -228,6 +255,7 @@
 
             <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field-newsletter" class="newsletter-form">
                 <input type="hidden" name="form-name" value="newsletter">
+                <input type="hidden" name="subject-line" value="Ny nyhetsbrev-påmelding (popup)">
                 <p style="display: none;">
                     <label>Don't fill this out: <input name="bot-field-newsletter" /></label>
                 </p>
@@ -235,7 +263,7 @@
                 <div class="newsletter-input-group">
                     <input
                         type="email"
-                        name="email"
+                        name="E-postadresse"
                         placeholder="Din e-postadresse"
                         required>
                     <button type="submit" class="btn-primary">
