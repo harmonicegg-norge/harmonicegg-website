@@ -10,7 +10,9 @@
       "Bash(git pull:*)",
       "Bash(git merge:*)",
       "Bash(npm start)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "WebFetch(domain:harmonicegg.no)",
+      "WebFetch(domain:www.harmonicegg.no)"
     ]
   }
 }
