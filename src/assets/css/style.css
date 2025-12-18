@@ -352,6 +352,28 @@ p {
   align-items: center;
 }
 
+/* Hero Background Video Enhancement */
+.hero-bg-video {
+  /* Add blur for dreamy background effect */
+  /* Adjust blur value: 0px = sharp, 3px = subtle, 8px = heavy */
+  filter: blur(5px) contrast(1.05) saturate(1.15) brightness(0.92);
+
+  /* Force hardware acceleration for smoother playback */
+  transform: translate(-50%, -50%) translateZ(0);
+  will-change: transform;
+
+  /* Prevent blur on scaling */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Optional: Adjust blur on larger screens */
+@media (min-width: 1920px) {
+  .hero-bg-video {
+    /* More blur on large screens for bokeh effect */
+    filter: blur(6px) contrast(1.08) saturate(1.2) brightness(0.92);
+  }
+}
 
 .hero-content {
   max-width: 1400px;

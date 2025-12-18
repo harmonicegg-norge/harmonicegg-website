@@ -16,7 +16,8 @@
       "Bash(du:*)",
       "Bash(npm install:*)",
       "Bash(node compress-images.js:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(ffprobe:*)"
     ]
   }
 }
