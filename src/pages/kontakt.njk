@@ -5,14 +5,7 @@ description: Ta kontakt med Harmonic Egg Norge. Ring +47 402 22 828 eller send e
 permalink: /kontakt/
 ---
 
-<section class="hero" style="padding: 3rem 0;">
-    <div class="container">
-        <h1>Kontakt oss</h1>
-        <p>Vi hjelper deg gjerne!</p>
-    </div>
-</section>
-
-<section class="section">
+<section class="section" style="padding-top: 4rem;">
     <div class="container">
         <div class="grid grid-2" style="align-items: start;">
             <!-- Contact Form -->
@@ -20,42 +13,43 @@ permalink: /kontakt/
                 <h2>Send oss en melding</h2>
                 <p style="margin-bottom: 2rem;">Fyll ut skjemaet så tar vi kontakt med deg så snart som mulig.</p>
                 
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/takk/">
                     <!-- Hidden fields for Netlify -->
                     <input type="hidden" name="form-name" value="contact">
+                    <input type="hidden" name="subject-line" value="Ny kontaktforespørsel fra harmonicegg.no">
                     <p style="display: none;">
                         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                     </p>
 
                     <div class="form-group">
-                        <label for="name">Navn *</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="name">Navn <span style="color: #d32f2f;">*</span></label>
+                        <input type="text" id="name" name="Navn" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">E-post *</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="email">E-post <span style="color: #d32f2f;">*</span></label>
+                        <input type="email" id="email" name="E-post" required>
                     </div>
 
                     <div class="form-group">
                         <label for="phone">Telefon</label>
-                        <input type="tel" id="phone" name="phone">
+                        <input type="tel" id="phone" name="Telefon">
                     </div>
 
                     <div class="form-group">
                         <label for="subject">Emne</label>
-                        <select id="subject" name="subject">
+                        <select id="subject" name="Emne">
                             <option value="">Velg emne...</option>
-                            <option value="booking">Booking av sesjon</option>
-                            <option value="question">Spørsmål om Harmonic Egg</option>
-                            <option value="prices">Spørsmål om priser</option>
-                            <option value="other">Annet</option>
+                            <option value="Booking av sesjon">Booking av sesjon</option>
+                            <option value="Spørsmål om Harmonic Egg">Spørsmål om Harmonic Egg</option>
+                            <option value="Spørsmål om priser">Spørsmål om priser</option>
+                            <option value="Annet">Annet</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Melding *</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <label for="message">Melding <span style="color: #d32f2f;">*</span></label>
+                        <textarea id="message" name="Melding" rows="6" required></textarea>
                     </div>
 
                     <button type="submit" class="btn-primary" style="width: 100%;">Send melding</button>
@@ -105,24 +99,6 @@ permalink: /kontakt/
                         Åpne i Google Maps
                     </a>
                 </div>
-                
-                <div class="card">
-                    <h3>👥 Følg oss på sosiale medier</h3>
-                    <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-                        <a href="https://www.facebook.com/harmoniceggvelvareinnenfra" 
-                           target="_blank" 
-                           class="btn-secondary" 
-                           style="flex: 1; text-align: center;">
-                            Facebook
-                        </a>
-                        <a href="https://www.instagram.com/harmoniceggnorway" 
-                           target="_blank" 
-                           class="btn-secondary" 
-                           style="flex: 1; text-align: center;">
-                            Instagram
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -145,18 +121,6 @@ permalink: /kontakt/
                     allowfullscreen="" 
                     loading="lazy">
                 </iframe>
-            </div>
-            
-            <div class="grid grid-2" style="margin-top: 2rem;">
-                <div class="card">
-                    <h3>🚗 Med bil</h3>
-                    <p>Gratis parkering tilgjengelig rett utenfor lokalene våre.</p>
-                </div>
-                
-                <div class="card">
-                    <h3>🚌 Med kollektivtransport</h3>
-                    <p>Kun 5 minutters gange fra Sandnes sentrum og busstasjonen.</p>
-                </div>
             </div>
         </div>
     </div>
